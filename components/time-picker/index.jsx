@@ -72,6 +72,10 @@ const Timepicker = createReactClass({
 			'relative',
 		]),
 		/**
+		 * Called when the triggering button loses focus.
+		 */
+		onBlur: PropTypes.func,
+		/**
 		 * Receives the props `(dateValue, stringValue)`
 		 */
 		onDateChange: PropTypes.func,
@@ -246,6 +250,7 @@ const Timepicker = createReactClass({
 				<TimepickerDropdownTrigger
 					iconRight={<InputIcon category="utility" name="clock" />}
 					onChange={this.handleInputChange}
+					onBlur={this.onBlur}
 					placeholder={this.props.placeholder}
 					required={this.props.required}
 					type="text"
